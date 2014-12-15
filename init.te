@@ -127,6 +127,9 @@ allow init security_file:dir { create setattr };
 # which can be configured on a device-by-device basis if needed.
 r_dir_file(init, security_file)
 
+# Allow init to setenforce 0
+allow init kernel:security setenforce;
+
 # Any operation that can modify the kernel ring buffer, e.g. clear
 # or a read that consumes the messages that were read.
 allow init kernel:system syslog_mod;
