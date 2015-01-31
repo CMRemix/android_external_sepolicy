@@ -41,4 +41,7 @@ userdebug_or_eng(`
   dontaudit su domain:peer *;
   dontaudit su domain:binder *;
   dontaudit su property_type:property_service *;
+
+  # For Settings control of access
+  allow system_app su_exec:file { execute_no_trans getattr open read execute };
 ')
